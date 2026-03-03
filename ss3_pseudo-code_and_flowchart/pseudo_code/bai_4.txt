@@ -1,0 +1,10 @@
+BEGIN
+	INPUT N
+	INPUT a
+	max = a
+	FOR i = 2 to N
+		INPUT ai
+		IF ai > max
+			max = ai
+	DISPLAY max
+END

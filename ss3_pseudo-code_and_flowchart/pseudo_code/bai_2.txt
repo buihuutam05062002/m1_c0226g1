@@ -1,0 +1,5 @@
+BEGIN 
+	INPUT usd
+	CALCULATE vnd = usd * 23.000
+	DISPLAY vnd
+END
