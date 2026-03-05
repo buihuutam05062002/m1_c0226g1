@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .row{
+    display: flex;
+  }
+  .row label{
+    width: 100px;
+  }
+body{
+  background: aquamarine;
+}
+.container{
+  background: #ffffff;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+.container-2{
+  padding-left: 50px ;
+}
+.blue-text{
+  color: blue;
+}
+.orange-text{
+  color: orange;
+}
+</style>
+<body>
+  <div class="container">
+    <h1 style="background: red;color: #ffffff ; text-align: center">SỞ THÍCH CỦA BẠN</h1>
+  <div class="container-2">
+    <div class="row">
+      <label for="yourname" class="blue-text" >Họ và tên</label>
+      <input type="text" name="yourname" id="yourname">
+    </div>
+
+    <br>
+    <div class="row">
+      <label for="email"  class="blue-text">Email</label>
+      <input type="email" name="email" id="email">
+    </div>
+    <table>
+      <tr>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label  class="orange-text">Thể thao</label>
+        </td>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Âm nhạc</label>
+        </td>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Đọc sách</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Lướt web</label>
+        </td>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Chơi game</label>
+        </td>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Điện ảnh</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" name="hobby" id="">
+          <label class="orange-text">Du lịch</label>
+        </td>
+      </tr>
+    </table>
+    <button type="submit">Gửi thông tin</button>
+    <button type="reset">Nhập lại</button>
+  </div>
+  </div>
+</body>
+</html>
