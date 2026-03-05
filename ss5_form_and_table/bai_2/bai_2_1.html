@@ -5,81 +5,83 @@
     <title>Title</title>
 </head>
 <style>
-  body{
+    body {
 
-    background: #fffda9;
-  }
-  .label-width-1{
-    width: 100px;
-    color: blue;
-  }
-  .row{
-    display: flex;
-    padding-bottom: 10px;
-  }
-  .blue-text{
-    background-color: #d4fdd6;
-    color: blue;
-  }
+        background: #fffda9;
+    }
+
+    .label-width-1 {
+        width: 100px;
+        color: blue;
+    }
+
+    .row {
+        display: flex;
+        padding-bottom: 10px;
+    }
+
+    .blue-text {
+        background-color: #d4fdd6;
+        color: blue;
+    }
 </style>
 <body>
 <h1 class="blue-text">Đăng ký học viên</h1>
 <form action="">
-  <div class="row">
-    <label for="username" class="label-width-1">Họ và tên</label>
-    <input type="text" name="" id="username" size="40">
-  </div>
-  <div class="row">
-    <label for="born" class="label-width-1">Ngày sinh</label>
-    <input type="text" name="" id="born">
-  </div>
-  <div class="row">
-  <label class="label-width-1">Giới tính</label>
-    <div>
-      <input type="radio" name="gender" >
-      Nam
-      <input type="radio" name="gender" >
-      Nữ
+    <div class="row">
+        <label for="username" class="label-width-1">Họ và tên</label>
+        <input type="text" name="" id="username" size="40">
+    </div>
+    <div class="row">
+        <label for="born" class="label-width-1">Ngày sinh</label>
+        <input type="text" name="" id="born">
+    </div>
+    <div class="row">
+        <label class="label-width-1">Giới tính</label>
+        <div>
+            <input type="radio" name="gender">
+            Nam
+            <input type="radio" name="gender">
+            Nữ
+        </div>
+
+
     </div>
 
 
-  </div>
-
-
-  <div class="row">
-    <label for="place" class="label-width-1">Địa chỉ</label>
-    <textarea id="place" rows="5" cols="30"></textarea>
-  </div>
-
-  <div class="row">
-    <label for="class" class="label-width-1">Lớp</label>
-    <select name="" id="class">
-      <option value="null">--Chọn lớp--</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-    </select>
-  </div>
-
-  <div class="row">
-    <label for="email" class="label-width-1">Email</label>
-    <input type="text" id="email">
-  </div>
-
-  <div class="row">
-    <label for="phone" class="label-width-1">Điện thoại</label>
-    <input type="number" id="phone">
-  </div>
-
-  <div class="row">
-    <label class="label-width-1"></label>
-    <div>
-      <button type="submit">Đăng ký</button>
-      <button type="reset">Nhập lại</button>
+    <div class="row">
+        <label for="place" class="label-width-1">Địa chỉ</label>
+        <textarea id="place" rows="5" cols="30"></textarea>
     </div>
-  </div>
+
+    <div class="row">
+        <label for="class" class="label-width-1">Lớp</label>
+        <select name="" id="class">
+            <option value="null">--Chọn lớp--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <label for="email" class="label-width-1">Email</label>
+        <input type="text" id="email">
+    </div>
+
+    <div class="row">
+        <label for="phone" class="label-width-1">Điện thoại</label>
+        <input type="number" id="phone">
+    </div>
+
+    <div class="row">
+        <label class="label-width-1"></label>
+        <div>
+            <button type="submit">Đăng ký</button>
+            <button type="reset">Nhập lại</button>
+        </div>
+    </div>
 
 
-  
 </form>
 
 </body>
