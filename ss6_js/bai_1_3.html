@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<label for="bankinh">Nhập bán kính</label><br>
+<input type="number" name="bankinh" id="bankinh"><br>
+
+<label id="dientich"></label>
+
+<button onclick="calculate()">Calculate</button>
+
+</body>
+<script type="text/javascript">
+    function calculate() {
+        bankinh = parseFloat(document.getElementById('bankinh').value);
+
+        dientich = document.getElementById('dientich');
+        dientich.innerText= Math.pow(bankinh,2) * Math.PI;
+    }
+</script>
+</html>
