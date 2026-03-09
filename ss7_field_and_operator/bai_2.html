@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .row{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .row div{
+        display: flex;
+        flex-direction: column;
+    }
+    .row div label{
+        padding: 10px;
+    }
+    .row div input, .row div select{
+        margin-right:10px
+    }
+    button{
+        margin-top:39px;
+    }
+</style>
+<body>
+<div class="row">
+    <div>
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" id="amount" min="1">
+    </div>
+    <div>
+        <label for="currency">From Currency</label>
+        <select name="currency" id="currency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+
+    </div>
+    <div>
+        <label for="to_currency">To Currency</label>
+        <select name="to_currency" id="to_currency">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+    </div>
+    <div>
+        <button type="button" onclick="calculateVNDTOUSD()">Convert</button>
+    </div>
+</div>
+
+
+    <h3 id="result"></h3>
+
+
+</body>
+
+<script>
+    function calculateVNDTOUSD(){
+        let amount = parseFloat(document.getElementById('amount').value);
+        let currency = document.getElementById('currency').value;
+        let to_currency = document.getElementById('to_currency').value;
+
+        let result = 0;
+
+        if(currency === "VND"){
+            if(to_currency === "USD"){
+                result = amount * 23000;
+            }
+            else{
+                result = amount;
+            }
+        }
+        else{
+            if(to_currency==="VND"){
+                result = amount / 23000;
+            }
+            else{
+                result = amount;
+            }
+        }
+        let print_result = document.getElementById('result');
+        print_result.innerText = result;
+    }
+</script>
+</html>

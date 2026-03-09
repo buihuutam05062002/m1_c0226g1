@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    label {
+        width: 10em;
+    }
+</style>
+<body>
+
+<form action="#">
+    <div>
+        <label for="physics">
+            physics
+        </label>
+        <input type="number" name="physics" id="physics">
+    </div>
+
+    <div>
+        <label for="math">math</label>
+        <input type="number" name="math" id="math">
+    </div>
+    <div>
+        <label for="biology">biology</label>
+        <input type="number" name="biology" id="biology">
+    </div>
+
+    <button type="button" onclick="calculate()">Submit</button>
+</form>
+
+
+<h4 id="average"></h4>
+<h5 id="sum"></h5>
+
+</body>
+<script>
+    function calculate() {
+        let physics = parseFloat(document.getElementById('physics').value);
+        let math = parseFloat(document.getElementById('math').value);
+        let biology = parseFloat(document.getElementById('biology').value);
+
+        let sum = document.getElementById('sum');
+        let average = document.getElementById('average');
+
+        let result = (physics + math + biology);
+        let averageResult  = result / 3;
+        sum.innerText = result;
+        average.innerText = averageResult ;
+    }
+
+
+</script>
+</html>

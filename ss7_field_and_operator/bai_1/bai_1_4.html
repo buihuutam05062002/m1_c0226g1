@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<label for="radius">Nhập bán kính</label><br>
+<input type="number" name="radius" id="radius"><br>
+
+<h1 id="perimeter"></h1>
+
+<button onclick="calculatePerimeter()">Calculate</button>
+
+</body>
+<script type="text/javascript">
+  function calculatePerimeter() {
+    let radius = parseFloat(document.getElementById('radius').value);
+
+    let perimeter = document.getElementById('perimeter');
+
+    perimeter.innerText= radius * 2 * Math.PI ;
+  }
+</script>
+</html>
