@@ -59,13 +59,13 @@
 <script>
     function calculateVNDTOUSD(){
         let amount = parseFloat(document.getElementById('amount').value);
-        let currency = document.getElementById('currency').value;
-        let to_currency = document.getElementById('to_currency').value;
+        let fromCurrency  = document.getElementById('fromCurrency ').value;
+        let toCurrency  = document.getElementById('toCurrency ').value;
 
         let result = 0;
 
-        if(currency === "VND"){
-            if(to_currency === "USD"){
+        if(fromCurrency  === "VND"){
+            if(toCurrency  === "USD"){
                 result = amount * 23000;
             }
             else{
@@ -73,15 +73,15 @@
             }
         }
         else{
-            if(to_currency==="VND"){
+            if(toCurrency ==="VND"){
                 result = amount / 23000;
             }
             else{
                 result = amount;
             }
         }
-        let print_result = document.getElementById('result');
-        print_result.innerText = result;
+        let printResult  = document.getElementById('result');
+        printResult .innerText = result;
     }
 </script>
 </html>

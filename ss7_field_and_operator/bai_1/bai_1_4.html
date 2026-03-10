@@ -6,21 +6,21 @@
 </head>
 <body>
 
-<label for="radius">Nhập bán kính</label><br>
-<input type="number" name="radius" id="radius"><br>
+<label for="circleRadius">Nhập bán kính</label><br>
+<input type="number" name="radius" id="circleRadius"><br>
 
-<h1 id="perimeter"></h1>
+<h1 id="perimeterResult"></h1>
 
 <button onclick="calculatePerimeter()">Calculate</button>
 
 </body>
 <script type="text/javascript">
   function calculatePerimeter() {
-    let radius = parseFloat(document.getElementById('radius').value);
+    let circleRadius = parseFloat(document.getElementById('circleRadius').value);
 
-    let perimeter = document.getElementById('perimeter');
+    let perimeterResult = document.getElementById('perimeterResult');
 
-    perimeter.innerText= radius * 2 * Math.PI ;
+    perimeterResult.innerText= circleRadius * 2 * Math.PI ;
   }
 </script>
 </html>
