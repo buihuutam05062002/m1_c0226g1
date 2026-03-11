@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+  td{
+    border: 1px solid gray;
+    text-align: center;
+  }
+  table{
+    gap: 200px;
+    /*height: 500px;*/
+    /*width: 500px;*/
+  }
+  input{
+    height: 40px;
+    width:500px;
+  }
+
+  button{
+    padding: 10px;
+    text-align: center;
+    font-weight: 1000;
+    color: blue;
+    height: 100px;
+    width: 100px;
+  }
+
+</style>
+<body>
+  <div>
+
+    <input type="text" id="inputBox" value="">
+    <table>
+      <tr>
+        <td ><button  id="number1" value="1" onclick="getNumber1()">1</button></td>
+        <td ><button  id="number2" value="2">2</button></td>
+        <td ><button >3</button></td>
+        <td ><button >+</button></td>
+      </tr>
+      <tr>
+        <td ><button >4</button></td>
+        <td ><button >5</button></td>
+        <td ><button >6</button></td>
+        <td ><button >-</button></td>
+      </tr>
+      <tr>
+        <td ><button >7</button></td>
+        <td ><button >8</button></td>
+        <td ><button >9</button></td>
+        <td ><button >X</button></td>
+      </tr>
+      <tr>
+        <td ><button type="reset">AC</button></td>
+        <td ><button >0</button></td>
+        <td ><button >=</button></td>
+        <td ><button >/</button></td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+<script>
+  function getNumber1(){
+    let number1 = document.getElementById("number1").value;
+    let inputBox = document.getElementById("inputBox");
+
+    inputBox.value += number1 ;
+    inputBox.textContent += number1
+  }
+
+</script>
+</html>

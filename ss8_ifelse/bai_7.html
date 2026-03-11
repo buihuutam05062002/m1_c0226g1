@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="numberA">A: </label>
+    <input type="number" name="numberA" id="numberA">
+</div>
+<div>
+    <label for="numberB">B: </label>
+    <input type="number" name="" id="numberB">
+</div>
+<div>
+    <label for="numberC">C: </label>
+    <input type="number" name="" id="numberC">
+</div>
+<div>
+    <button type="button" onclick="check_Maxnumber()">Check
+        Submit
+    </button>
+</div>
+<h1 id="result">
+
+</h1>
+
+</body>
+<script>
+    function check_Maxnumber(){
+        let numberA = parseFloat(document.getElementById("numberA").value);
+        let numberB = parseFloat(document.getElementById("numberB").value);
+        let numberC = parseFloat(document.getElementById("numberC").value);
+        let result = document.getElementById("result");
+        if (numberA > numberB) {
+            if (numberA > numberC) {
+                result.innerHTML = numberA;
+            }
+            else{
+                result.innerHTML = numberC;
+            }
+        }
+        else  {
+            if(numberB > numberC){
+                result.innerHTML = numberB;
+            }
+            else{
+                result.innerHTML = numberC;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="numberA">doanh số bán hàng</label>
+    <input type="text" id="numberA">
+</div>
+<div>
+    <label for="numberB">phần trăm hoa hồng</label>
+    <input type="text" id="numberB">
+</div>
+<button type="button" onclick="calculate()">Nhấn</button>
+<h1 id="result"></h1>
+</body>
+<script>
+    function calculate() {
+        let numberA = parseFloat(document.getElementById('numberA').value);
+        let numberB = parseFloat(document.getElementById('numberB').value);
+
+        let result = document.getElementById('result');
+        let result1 = (numberA * numberB) / 100;
+
+        result.innerText =  "Tổng hoa hồng ăn được là " + result1;
+    }
+</script>
+</html>

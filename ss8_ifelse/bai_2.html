@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>Kiểm tra số ngày trong tháng</h2> <br>
+
+  <input type="number" name="" id="month" placeholder="Nhập tháng" min="1" max="12" style="width: 10em">
+  <button type="button" onclick="getDayFromMonth()">Check</button>
+
+  <p id="result"></p>
+
+</body>
+<script>
+  function getDayFromMonth(){
+    let month  = parseInt(document.getElementById("month").value);
+
+    let result = document.getElementById("result");
+
+    switch(month){
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        result.innerText = "31 ngày";
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        result.innerText= "30 ngày";
+        break;
+      case 2:
+        result.innerText= "28 ngày hoặc 29 ngày";
+        break;
+    }
+  }
+</script>
+</html>
