@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let sideA = parseFloat(prompt("nhập số a "));
+    let sideB = parseFloat(prompt("nhập số b "));
+    let sideC = parseFloat(prompt("nhập số c "));
+
+    if (sideA > 0 && sideB > 0 && sideC > 0) {
+        if (((sideA + sideB) > sideC) && ((sideB + sideC) > sideA) && ((sideA + sideC) > sideB)) {
+            console.log("là tam giác");
+        } else {
+            console.log("Không phải là tam giác");
+        }
+    } else {
+        console.log("Cạnh không hợp lệ");
+    }
+
+</script>
+</html>

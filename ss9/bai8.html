@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra tuổi hợp lệ</h1>
+<div>
+    <label for="age">age: </label>
+    <input type="number" name="" id="age">
+</div>
+
+<button type="button" onclick="isCheckAge()">Nhấn</button>
+<h1 id="result"></h1>
+
+
+<script>
+    function isCheckAge() {
+        let age = parseInt(document.getElementById("age").value);
+        let result = document.getElementById("result");
+        if (age > 0 && age < 120) {
+            result.innerText = "Tuổi hợp lệ";
+        } else {
+            result.innerText = "Tuổi không hợp lệ";
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="sideA">hình chữ nhật cạnh a</label>
+    <input type="text" id="sideA">
+</div>
+<div>
+    <label for="sideB">hình chữ nhật cạnh b</label>
+    <input type="text" id="sideB">
+</div>
+<button type="button" onclick="calculateAreaRectangle()">Nhấn</button>
+<h1 id="result"></h1>
+
+
+<script>
+    function calculateAreaRectangle() {
+        let sideA = parseFloat(document.getElementById("sideA").value);
+        let sideB = parseFloat(document.getElementById("sideB").value);
+        let result = document.getElementById("result");
+        result.innerText = (sideA * sideB) + " là diện tích hình chữ nhật";
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const LEVEL1 = 5000000;
+    const LEVEL2 = 10000000;
+    const LEVEL3 = 18000000;
+    const LEVEL4 = 32000000;
+    const LEVEL5 = 52000000;
+    const LEVEL6 = 80000000;
+
+    const TAXRATE1 = 5;
+    const TAXRATE2 = 10;
+    const TAXRATE3 = 15;
+    const TAXRATE4 = 20;
+    const TAXRATE5 = 25;
+    const TAXRATE6 = 30;
+    const TAXRATE7 = 35;
+
+
+    let salary = parseFloat(prompt("Nhập thu nhập cá nhân: "));
+    if (salary > LEVEL6) {
+        console.log((salary * TAXRATE7) / 100);
+    } else if (salary > LEVEL5) {
+        console.log((salary * TAXRATE6) / 100);
+    } else if (salary > LEVEL4) {
+        console.log((salary * TAXRATE5) / 100);
+    } else if (salary > LEVEL3) {
+        console.log((salary * TAXRATE4) / 100);
+    } else if (salary > LEVEL2) {
+        console.log((salary * TAXRATE3) / 100);
+    } else if (salary > LEVEL1) {
+        console.log((salary * TAXRATE2) / 100);
+    } else {
+        console.log((salary * TAXRATE1) / 100);
+    }
+</script>
+</html>

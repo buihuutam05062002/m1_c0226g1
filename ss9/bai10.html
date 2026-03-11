@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    const level1 = 1.984;
+    const level2 = 2.050;
+    const level3 = 2.380;
+    const level4 = 2.998;
+    const level5 = 3.350;
+    const level6 = 3.480;
+
+    let electricConsumption = parseFloat(prompt("Nhập tiêu thụ điện: "));
+    let result;
+    if (electricConsumption > 400) {
+        result = (50 * level1) + (50 * level2) + (100 * level3) + (100 * level4) + (100 * level5) + ((electricConsumption - 400) * level6);
+    } else if (electricConsumption > 300) {
+        result = (50 * level1) + (50 * level2) + (100 * level3) + (100 * level4) + ((electricConsumption - 300) * level5);
+    } else if (electricConsumption > 200) {
+        result = (50 * level1) + (50 * level2) + (100 * level3) + ((electricConsumption - 200) * level4);
+    } else if (electricConsumption > 100) {
+        result = (50 * level1) + (50 * level2) + ((electricConsumption - 100) * level3);
+    } else if (electricConsumption > 50) {
+        result = (50 * level1) + ((electricConsumption - 50) * level2);
+    } else {
+        result = (electricConsumption * level1);
+    }
+    console.log(result);
+</script>
+</html>

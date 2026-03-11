@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <label for="numberA">Chuyển từ độ c sang f</label>
+    <input type="text" id="numberA">
+</div>
+<button type="button" onclick="calculateFahrenheit()">Nhấn</button>
+<h1 id="result"></h1>
+
+
+<script>
+    function calculateFahrenheit() {
+        let result = document.getElementById("result");
+        let numberA = parseFloat(document.getElementById("numberA").value);
+        result.innerText = (numberA * 9 / 5 + 32) + "F";
+    }
+</script>
+</body>
+
+</html>

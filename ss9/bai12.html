@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // lãi đơn
+
+
+
+
+    let futureValue;
+    let presentValue = +prompt("nhập số tieenf bạn muốn gửi lãi xuất kép");
+    let compoundingMonthly = +prompt("Số tháng muốn gư tiếng kiệm");
+    let interestRateMonthly = +prompt("Số phần trăm của lãi suất hàng tháng");
+
+    futureValue = ((presentValue * ((interestRateMonthly / 100)) / 12) * compoundingMonthly) + presentValue;
+
+    alert(futureValue);
+
+
+</script>
+</html>
