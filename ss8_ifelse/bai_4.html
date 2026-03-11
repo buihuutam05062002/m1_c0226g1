@@ -5,28 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-  <div>
+<div>
     <label for="numberA">a </label>
     <input type="number" id="numberA" name="numberA">
-  </div>
-<div>
-  <label for="numberB">b </label>
-  <input type="number" id="numberB" name="numberB">
 </div>
-<button type="button" onclick="isDivided()">Check</button>
+<div>
+    <label for="numberB">b </label>
+    <input type="number" id="numberB" name="numberB">
+</div>
+<button type="button" onclick="checkDivisible()">Check</button>
 <h1 id="result"></h1>
 </body>
 <script>
-  function isDivided () {
-    numberA = parseFloat(document.getElementById('numberA').value);
-    numberB = parseFloat(document.getElementById('numberB').value);
-    result = document.getElementById('result');
-    if(number_a % number_b !== 0){
-      result.innerText= "số a không chia hết cho b";
+    function checkDivisible() {
+        let numberA = parseFloat(document.getElementById('numberA').value);
+        let numberB = parseFloat(document.getElementById('numberB').value);
+        let result = document.getElementById('result');
+        if (numberA % numberB !== 0) {
+            result.innerText = "số a không chia hết cho b";
+        } else {
+            result.innerText = "số a chia hết cho b";
+        }
     }
-    else{
-      result.innerText = "số a chia hết cho b";
-    }
-  }
 </script>
 </html>

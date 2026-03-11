@@ -11,24 +11,20 @@
 </div>
 <div>
     <label for="numberB">B: </label>
-    <input type="number" name="" id="numberB">
+    <input type="number" name="numberB" id="numberB">
 </div>
 <div>
     <label for="numberC">C: </label>
-    <input type="number" name="" id="numberC">
+    <input type="number" name="numberC" id="numberC">
 </div>
 <div>
-    <button type="button" onclick="check_Maxnumber()">Check
-        Submit
-    </button>
+    <button type="button" onclick="findMaxNumber()">Check</button>
 </div>
-<h1 id="result">
-
-</h1>
+<h1 id="result"></h1>
 
 </body>
 <script>
-    function check_Maxnumber(){
+    function findMaxNumber() {
         let numberA = parseFloat(document.getElementById("numberA").value);
         let numberB = parseFloat(document.getElementById("numberB").value);
         let numberC = parseFloat(document.getElementById("numberC").value);
@@ -36,16 +32,13 @@
         if (numberA > numberB) {
             if (numberA > numberC) {
                 result.innerHTML = numberA;
-            }
-            else{
+            } else {
                 result.innerHTML = numberC;
             }
-        }
-        else  {
-            if(numberB > numberC){
+        } else {
+            if (numberB > numberC) {
                 result.innerHTML = numberB;
-            }
-            else{
+            } else {
                 result.innerHTML = numberC;
             }
         }

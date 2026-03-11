@@ -9,28 +9,27 @@
     <label for="timeCall"> thời gian gọi</label>
     <input type="text" id="timeCall">
 </div>
-<button type="button" onclick="taxCall()">Nhấn</button>
+<button type="button" onclick="calculateCallFee()">Nhấn</button>
 <h1 id="result"></h1>
 
 </body>
 
 <script type="text/javascript">
-    let subscriber_account = 25000;
+    let baseFee = 25000;
     let result = document.getElementById('result');
-    function taxCall(){
-        let timeCall = parseFloat(document.getElementById("timeCall").value);
-        let temp ;
-        if(timeCall <= 50){
-            temp = timeCall * 600;
+
+    function calculateCallFee() {
+        let callMinutes = parseFloat(document.getElementById("callMinutes").value);
+        let callCost;
+        if (callMinutes <= 50) {
+            callCost = callMinutes * 600;
+        } else if (callMinutes > 200) {
+            callCost = (50 * 600) + ((150) * 400) + ((callMinutes - 200) * 200);
+        } else {
+            callCost = (50 * 600) + ((callMinutes - 50) * 400);
         }
-        else if(timeCall > 200){
-            temp = (50 * 600) + ((150) * 400) + ((timeCall-200) * 200);
-        }
-        else{
-            temp = (50 * 600) + ((timeCall- 50) * 400);
-        }
-        temp += subscriber_account ;
-        result.innerText = temp;
+        callCost += baseFee;
+        result.innerText = callCost;
     }
 </script>
 </html>
