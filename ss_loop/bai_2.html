@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkPrime(number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let count = 0;
+    let number = 0;
+    while (true) {
+        if (checkPrime(number)) {
+            document.writeln(number);
+            count++;
+        }
+        if (count === 20) {
+            break;
+        }
+        number++;
+    }
+
+</script>
+</body>
+</html>

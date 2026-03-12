@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button type="button" id="buttonPlay">Chơi</button>
+
+<script>
+
+
+    let buttonPlay = document.getElementById("buttonPlay");
+    buttonPlay.addEventListener("click", checkNumber);
+
+
+    function checkNumber() {
+        let maxNumber = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?");
+        let predictNumber = +prompt("Nhập số bạn đoán");
+
+        const bornNumber = Math.floor(Math.random() * (maxNumber + 1));
+        console.log(bornNumber);
+
+        for (let i = 1; i <= 3; i++) {
+            if (predictNumber === bornNumber) {
+                document.writeln("Chúc mừng bạn đã đoán đúng");
+                break;
+            } else if (predictNumber > bornNumber) {
+                alert("số bạn đoán lớn hơn")
+                predictNumber = +prompt("Nhập số bạn đoán");
+            } else {
+                alert("số bạn đoán nhỏ hơn")
+                predictNumber = +prompt("Nhập số bạn đoán");
+            }
+            if (i === 3) {
+                alert("Bạn đã hết lượt")
+            }
+        }
+
+
+    }
+
+
+</script>
+</body>
+</html>
