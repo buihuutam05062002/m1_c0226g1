@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    let money = +prompt("tiền ban đầu ");
+    let rate = +prompt("Lãi suất");
+    let months = +prompt("số tháng gửi");
+
+
+    // let compoundInterest = money * (Math.pow(1+ rate,months))
+    for (let i = 1; i <= months; ++i) {
+        money +=   (money * rate)
+    }
+    alert(money)
+</script>
+</body>
+</html>
