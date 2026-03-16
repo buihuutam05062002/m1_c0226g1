@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let arrA = [1, 2, 5, 3, 7, 9, 3, 2, 13, 43];
+    let arrB = [11, 22, 52, 21, 72, 333, 31, 98, 13, 43];
+
+    let arrC = new Array(20);
+
+    for (let i = 0; i < arrA.length; i++) {
+        arrC[i] = arrA[i];
+    }
+    for (let i = 0; i < arrB.length; i++) {
+        arrC[10 + i] = arrB[i];
+    }
+    console.log(arrC);
+</script>
+</body>
+</html>

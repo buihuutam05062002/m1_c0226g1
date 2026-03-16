@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form method="post" action="">
+    <label for="search">tìm kiếm</label>
+    <input type="text" name="" id="search">
+    <button type="button" id="btnSearch">Tìm kiếm</button>
+</form>
+<h1 id="result"></h1>
+
+<script>
+    function translateVietnam() {
+        let arrEnglish = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+        let arrVietNam = ["một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
+
+
+        let textSearch = document.getElementById("search");
+        let result = document.getElementById("result");
+        let found = false
+
+        for (let i = 0; i < arrEnglish.length; i++) {
+            if ((textSearch.value).toLowerCase() === arrEnglish[i]) {
+                result.innerText = arrVietNam[i];
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            result.innerText = "Không tìm thấy";
+        }
+    }
+
+
+    let btnSearch = document.getElementById("btnSearch");
+    btnSearch.addEventListener("click", translateVietnam);
+
+</script>
+</body>
+</html>

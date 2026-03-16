@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  let arr = [1,2,5,3,7,9,3,2,13,43];
+  let max = arr[2] ;
+  let indexMax = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] > max){
+      max = arr[i];
+      indexMax = i;
+    }
+
+  }
+  console.log(max);
+  console.log(indexMax);
+
+</script>
+</body>
+</html>

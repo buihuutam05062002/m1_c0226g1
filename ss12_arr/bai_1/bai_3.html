@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    let sequence = prompt("nhập ký tự");
+    let result = "";
+    for (let i = 0; i < sequence.length; i++) {
+      if(sequence[i] === sequence[i].toLowerCase()) {
+        result += sequence[i].toUpperCase();
+      }
+      else{
+        result += sequence[i].toLowerCase();
+      }
+    }
+    alert(result);
+  </script>
+</body>
+</html>

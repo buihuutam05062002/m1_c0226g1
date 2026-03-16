@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let isCheck = 0;
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Nhập số nguyên")));
+    }
+    let numCheck = +prompt("Nhập số muốn check");
+    for (let i = 0; i < arr.length; i++) {
+        if (numCheck === arr[i]) {
+            isCheck = 1;
+            break;
+        }
+    }
+    isCheck = 1 ? "số có trong mảng" : "số không có trong mảng";
+    console.log(isCheck);
+</script>
+</body>
+</html>

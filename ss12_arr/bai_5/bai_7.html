@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let arr = [];
+
+    for (let i = 0; i < 10; i++) {
+        arr.push(parseInt(prompt("Nhập số nguyên")));
+    }
+    let index = -1;
+    let searchNumber = +prompt("Nhập số muốn xóa khỏi mảng");
+    let isCheck = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (searchNumber === arr[i]) {
+            index = i;
+            isCheck = true;
+            break;
+        }
+    }
+    if (isCheck) {
+        for (let i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = 0;
+        console.log(arr);
+    } else {
+        console.log("Không tồn tại số đó trong number");
+    }
+
+
+</script>
+</body>
+</html>

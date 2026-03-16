@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let sequence = prompt("Nhập chuỗi cho bạn");
+    let result = "";
+
+    for (let i = 0; i < sequence.length; i++) {
+        if (sequence[i] % 2 === 0 && sequence[i + 1] % 2 === 0) {
+            result += sequence[i] + "-";
+        } else {
+            result += sequence[i];
+        }
+
+    }
+    console.log(result);
+</script>
+</body>
+</html>
