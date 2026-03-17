@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  let arr = [];
+  let n = +prompt("Nhập kích thước mảng");
+
+  for (let i = 0; i < n; i++) {
+    arr[i] = prompt("Nhập ký tự");
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === '-') {
+      arr[i] = '_';
+    }
+  }
+
+</script>
+</body>
+</html>
