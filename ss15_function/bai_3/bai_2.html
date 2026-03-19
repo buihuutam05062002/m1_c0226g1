@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button id="btnEvent">Cleck here</button>
+<script>
+    let number = 0;
+
+    function numberIncreaseone() {
+        number = number + 1;
+        console.log(number);
+    }
+
+    let btnEvent = document.getElementById("btnEvent");
+    btnEvent.addEventListener("click", numberIncreaseone);
+
+
+</script>
+</body>
+</html>
