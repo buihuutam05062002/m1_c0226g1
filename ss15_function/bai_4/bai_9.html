@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function checkCharINArray(char, arr) {
+        let count = 0;
+        for (let value of arr) {
+            if (char === value) {
+                count++;
+            }
+        }
+        return count > 0 ? count : -1;
+    }
+
+    console.log(checkCharINArray("0", ["b", "a", "a"]));
+
+</script>
+</body>
+</html>

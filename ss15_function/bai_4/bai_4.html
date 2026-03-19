@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button type="button" onclick="console.log(checkNumber('10013e'))">Click me</button>
+<script>
+    function checkNumber(sequence) {
+        let isCheck = false;
+        for (let i = 0; i < sequence.length; i++) {
+            isCheck = sequence[i] >= "0" && sequence[i] <= "9";
+        }
+        return isCheck;
+    }
+</script>
+</body>
+</html>

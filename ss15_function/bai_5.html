@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td, th {
+        border: 1px solid black;
+
+    }
+
+    table {
+        width: 400px;
+    }
+</style>
+<body>
+
+<h2>Add new product</h2>
+<form>
+    <input type="text" name="" id="inputProduct">
+    <button type="button" id="btnAddProduct">Add</button>
+</form>
+<br>
+<h2>Display All Product</h2>
+<table id="tableProduct"></table>
+
+
+<script>
+    let tableProduct = document.getElementById("tableProduct");
+    let inputProduct = document.getElementById("inputProduct");
+    let products = [];
+    let btnAddProduct = document.getElementById("btnAddProduct");
+
+    displayProduct();
+
+    function displayProduct() {
+        tableProduct.innerHTML = '';
+        for (let i = 0; i < products.length; i++) {
+            let trElement = document.createElement("tr");
+
+            let tdElementCount = document.createElement("td");
+            tdElementCount.innerText = `${i + 1}`;
+
+            let tdElementName = document.createElement("td");
+            tdElementName.innerText = `${products[i]}`;
+
+            let tdBtnEdit = document.createElement("td")
+            tdBtnEdit.innerHTML = `<button type="button" onclick="editProduct(${i})">Edit</button>`
+
+            let tdBtnDelete = document.createElement("td")
+            tdBtnDelete.innerHTML = `<button type="button" onclick="deleteProduct(${i})">Delete</button>`
+
+            trElement.appendChild(tdElementCount);
+            trElement.appendChild(tdElementName);
+            trElement.appendChild(tdBtnEdit);
+            trElement.appendChild(tdBtnDelete);
+
+            tableProduct.appendChild(trElement);
+        }
+    }
+
+    function addProduct(product) {
+        products.push(product);
+        displayProduct();
+    }
+
+    btnAddProduct.addEventListener("click", () => addProduct(inputProduct.value));
+
+    function deleteProduct(productIndex) {
+        isDelete = confirm("Are you sure you want to delete this product?");
+        if (isDelete) {
+            products.splice(productIndex, 1);
+            displayProduct();
+        }
+    }
+
+    function editProduct(productIndex) {
+        editInput = prompt("Enter Product Name");
+        products[productIndex] = editInput;
+        displayProduct();
+    }
+
+
+</script>
+</body>
+</html>

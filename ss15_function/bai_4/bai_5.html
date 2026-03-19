@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function maxAmongThreeNumber(numA, numB, numC) {
+        return Math.max(numA, numB, numC);
+    }
+
+    console.log(maxAmongThreeNumber(5, 2, 3))
+
+    function maxAmongThreeNumber1(numA, numB, numC) {
+        if (numA > numB) {
+            if (numA > numC) {
+                return numA;
+            } else {
+                return numC
+            }
+        } else {
+            if (numB > numC) {
+                return numB;
+            } else {
+                return numC;
+            }
+        }
+    }
+    console.log(maxAmongThreeNumber1(5, 8, 3))
+
+</script>
+</body>
+</html>
