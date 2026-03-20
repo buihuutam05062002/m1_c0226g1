@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.width = width;
+            this.length = length;
+        }
+
+
+        getWidth() {
+            return this.width;
+        }
+
+        getLength() {
+            return this.length;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        setLength(length) {
+            this.length = length;
+        }
+
+
+        calculateArea() {
+            return this.width * this.length;
+        }
+
+        calculatePerimeter() {
+            return 2 * (this.width + this.length);
+        }
+
+        draw() {
+            let canvas = document.createElement("canvas")
+            canvas.width = this.width;
+            canvas.height = this.length;
+
+            let ctx = canvas.getContext("2d");
+            ctx.fillRect(0, 0, this.width, this.length);
+            return canvas
+        }
+
+
+    }
+
+    let result = new Rectangle(500, 600);
+    document.body.appendChild(result.draw());
+
+</script>
+</body>
+</html>

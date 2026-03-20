@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class Apple {
+        // private
+        #weight = 10;
+
+/// app ()
+        constructor() {
+        }
+
+        getWeight() {
+            return this.#weight;
+        }
+
+        decreaseWeight() {
+            if(!this.isEmpty()){
+                this.#weight--;
+            }
+        }
+
+        isEmpty() {
+            return this.#weight <= 0;
+        }
+
+    }
+
+    class Human {
+        #name;
+        #gender;
+        #weight;
+
+
+        constructor(name, gender, weight) {
+            this.#name = name;
+            this.#gender = gender;
+            this.#weight = weight;
+        }
+
+        isMale(){
+            return this.gender === true;
+        }
+
+
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+        checkApple(apple){
+            return Apple.getWeight();
+        }
+        eatApple(apple){
+            if(!apple.isEmpty()){
+                apple.decreaseWeight();
+                this.#weight++;
+            }
+            else{
+                console.log("Apple is empty");
+                return;
+            }
+
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        getWeight() {
+            return this.#weight;
+        }
+
+        setWeight(weight) {
+            this.#weight = weight;
+        }
+
+        say(message) {
+            console.log(message);
+        }
+    }
+    let apple = new Apple();
+
+    let adam = new Human("Adam", true, 60);
+    let eva = new Human("Eva", false, 50);
+
+    while (!apple.isEmpty()) {
+
+        // Adam ăn
+        adam.eatApple(apple);
+        console.log("Adam weight:", adam.getWeight());
+        console.log("Apple weight:", apple.getWeight());
+
+        if (apple.isEmpty()) break;
+
+        // Eva ăn
+        eva.eatApple(apple);
+        console.log("Eva weight:", eva.getWeight());
+        console.log("Apple weight:", apple.getWeight());
+    }
+</script>
+</body>
+</html>

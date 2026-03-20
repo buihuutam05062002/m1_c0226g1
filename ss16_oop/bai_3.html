@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    class Mobile {
+        status = false;
+        composingMessage = "";
+        inbox = [];
+        sentMessages = [];
+        battery;
+
+        constructor(battery) {
+            if (battery > 0 && battery <= 100) {
+                this.battery = battery;
+
+            }
+        }
+
+        // đổi chỗ
+        isUsable() {
+            if (!this.status) {
+                console.log("Phone is off");
+                return false;
+            }
+            if (this.battery <= 0) {
+                console.log("Out of battery");
+                return false;
+            }
+            return true;
+        }
+
+        decreaseBattery() {
+            if (this.battery > 0) {
+                this.battery--;
+            }
+        }
+
+        // bat va tat dien thoai
+        setStatus(status) {
+            if (this.battery <= 0) {
+                console.log("Cannot turn on, no battery");
+                return;
+            }
+            this.decreaseBattery();
+            this.status = status;
+        }
+
+        // kiem tra trang thai dien thoai
+        getStatus() {
+            if (!this.isUsable()) return;
+            this.decreaseBattery();
+            return this.status;
+        }
+
+        // sac pin
+        charge() {
+            setTimeout(() => {
+                if (this.battery < 100) {
+                    this.battery++;
+                }
+            }, 3000);
+        }
+
+        // soạn tin nhắn
+        setComposingMessage(message) {
+            if (!this.isUsable()) return;
+            this.composingMessage = message;
+            this.decreaseBattery();
+        }
+
+        // lay tin nhan
+        getComposingMessage() {
+            if (!this.isUsable()) return;
+            this.decreaseBattery();
+            return this.composingMessage;
+
+        }
+
+        sendMessage(otherMobile ) {
+            if (!this.isUsable()) return;
+            this.decreaseBattery();
+            let msg = this.getComposingMessage();
+            otherMobile.inbox.unshift(msg);
+            this.sentMessages.unshift(msg);
+            this.setComposingMessage("");
+            console.log("Da gui tin nhan thanh cong");
+        }
+
+        displayInbox() {
+            if (!this.isUsable()) return;
+            this.decreaseBattery();
+            for (let i = 0; i < this.inbox.length; i++) {
+                console.log(this.inbox[i]);
+            }
+        }
+
+        displaySentMessages() {
+            if (!this.isUsable()) return;
+            this.decreaseBattery();
+            for (let i = 0; i < this.sentMessages.length; i++) {
+                console.log(this.sentMessages[i]);
+            }
+        }
+
+    }
+
+    let iphone = new Mobile(39);
+    let nokia = new Mobile(45);
+
+
+    nokia.setStatus(true)
+    iphone.setStatus(true);
+
+    iphone.setComposingMessage("Hello");
+    iphone.sendMessage(nokia);
+
+    iphone.displaySentMessages()
+    nokia.displayInbox();
+</script>
+</body>
+</html>

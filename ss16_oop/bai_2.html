@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    class Temperature{
+        constructor(celcius){
+            if(celcius >  -271){
+                this.celcius = celcius;
+            }
+        }
+        getCelcius(){
+            return this.celcius;
+        }
+        convertFahrenheit(){
+            return this.celcius * (9/5) + 32;
+        }
+
+        convertKelvin(){
+            return this.celcius + 273.15;
+        }
+    }
+    let temperature = new Temperature(1);
+    console.log(temperature.convertFahrenheit());
+    console.log(temperature.convertKelvin());
+</script>
+</body>
+</html>
