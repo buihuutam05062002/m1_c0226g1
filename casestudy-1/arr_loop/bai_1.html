@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let a  = [];
+    a.push(1);
+    a.push(2);
+    a.push(3);
+
+    let b = [];
+    for (let i = 0; i < a.length; i++) {
+        let sum = 0;
+        for (let j = 0; j <= i; j++) {
+            sum += a[j];
+        }
+        b.push(sum);
+    }
+    console.log(b);
+</script>
+</body>
+</html>

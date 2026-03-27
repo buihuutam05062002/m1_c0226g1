@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    function maxFraction(arrA, arrB) {
+        let n = arrA.length;
+        let maxNum = arrA[0]/arrB[0];
+        let index;
+        for (let i = 0; i < n; i++) {
+            if((arrA[i] / arrB[i]) > maxNum) {
+                maxNum =(arrA[i] / arrB[i]);
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    console.log(maxFraction([5,2,5],[6,3,4]));
+
+
+</script>
+</body>
+</html>

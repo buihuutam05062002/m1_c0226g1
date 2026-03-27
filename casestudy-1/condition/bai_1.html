@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    const TAX_1  = 0.2;
+    const TAX_2  = 0.1;
+    const TAX_3  = 0.05;
+
+
+    let salary = +prompt("Nhập lương của bạn");
+    let result ;
+    if(salary > 15000000){
+        result = salary*TAX_1;
+    }
+    else if(salary < 7000000){
+        result = salary*TAX_3;
+    }
+    else{
+        result = salary*TAX_2;
+    }
+
+    alert(`tiền nhận được sau khi qua thuế ${result}`);
+
+
+
+</script>
+</body>
+</html>

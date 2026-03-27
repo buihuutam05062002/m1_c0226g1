@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let row = +prompt("nhập số dòng ");
+    let column = +prompt("nhập số cột");
+
+
+    let arr = [];
+    let maxNumb;
+    let minNumb;
+    for (let i = 0; i < row; i++) {
+        arr[i] = []
+        for (let j = 0; j < column; j++) {
+            arr[i][j] = +prompt(`nhập số tại vị trí ${i} và ${j}  `);
+            if (i === 0 && j === 0) {
+                maxNumb = arr[0][0];
+                minNumb = arr[0][0];
+            }
+
+            maxNumb = arr[i][j] > maxNumb ? arr[i][j] : maxNumb;
+            minNumb = arr[i][j] < minNumb ? arr[i][j] : minNumb;
+        }
+    }
+    console.log(maxNumb);
+    console.log(minNumb);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    let s = "gyhujcabcaaaauya";
+
+    let result = "";
+    let isFlag = false;
+    for (let i = 0; i < s.length; i++) {
+        for (let j = 0; j <= result.length; j++) {
+            if (s[i] === result[j]) {
+                isFlag = true;
+                break;
+            }
+        }
+    if (!isFlag) {
+        result += s[i];
+    }
+    }
+    console.log(result);
+
+</script>
+</body>
+</html>

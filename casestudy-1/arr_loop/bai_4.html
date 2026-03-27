@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    arrFruits = [["cafe", 13], ["Cam vat", 15], ["nuoc ep ca rot", 20], ["nuoc ep ca ca chua", 25], ["nuoc loc", 5], ["nuoc dua", 15]];
+    let choice
+    let sum = 0;
+    do {
+        choice = +prompt("bạn hãy đặt đồ uống"
+            + "\n" +
+            "1 " + arrFruits[0][0] + " " + arrFruits[0][1] + "\n" +
+            "2 " + arrFruits[1][0] + " " + arrFruits[1][1] + "\n" +
+            "3 " + arrFruits[2][0] + " " + arrFruits[2][1] + "\n" +
+            "4 " + arrFruits[3][0] + " " + arrFruits[3][1] + "\n" +
+            "5 " + arrFruits[4][0] + " " + arrFruits[4][1] + "\n" +
+            "6 " + arrFruits[5][0] + " " + arrFruits[5][1] + "\n" +
+            "7 " + "Để kết thúc chương trình"
+        );
+
+        switch (choice) {
+            case 1:
+                sum += (+prompt("nhập soo luong") * arrFruits[0][1]);
+                break;
+            case 2:
+                sum += (+prompt("nhập soo luong") * arrFruits[1][1]);
+                break;
+            case 3:
+                sum += (+prompt("nhập soo luong") * arrFruits[2][1]);
+                break;
+            case 4:
+                sum += (+prompt("nhập soo luong") * arrFruits[3][1]);
+                break;
+            case 5:
+                sum += (+prompt("nhập soo luong") * arrFruits[4][1]);
+                break;
+            case 6:
+                sum += (+prompt("nhập soo luong") * arrFruits[5][1]);
+                break;
+        }
+
+    } while (choice >= 1 && choice < 7)
+
+    alert(sum);
+</script>
+
+</body>
+</html>

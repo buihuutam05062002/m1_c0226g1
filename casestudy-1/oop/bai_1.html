@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td, tr, th {
+        border: 1px solid #000;
+        padding: 20px;
+    }
+</style>
+<body>
+
+<div>
+    <button type="button" id="addStudent">Thêm mới học viên</button>
+    <button type="button" id="btnEditStudent">Sửa thông tin học viên</button>
+    <button type="button" id="btnDeleteStudent">Xóa học viên</button>
+</div>
+
+<table id="table_student">
+    <tr>
+        <th>
+            Mã học viên
+        </th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Module</th>
+    </tr>
+</table>
+
+
+<script>
+    class Student {
+        #id
+        #name
+        #class_
+        #email
+        #born
+        #module
+
+        constructor(id, name, class_, email, born, module) {
+            this.#id = id;
+            this.#name = name;
+            this.#email = email;
+            this.#class_ = class_;
+            this.#born = born;
+            this.#module = module;
+        }
+
+        getEmail() {
+            return this.#email;
+        }
+
+        getID() {
+            return this.#id;
+        }
+
+        getName() {
+            return this.#name;
+        }
+
+        getClass_() {
+            return this.#class_;
+        }
+
+        getBorn() {
+            return this.#born;
+        }
+
+        getModule() {
+            return this.#module;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        setClass_(class_) {
+            this.#class_ = class_;
+        }
+
+        setEmail(email) {
+            this.#email = email;
+        }
+
+        setBorn(born) {
+            this.#born = born;
+        }
+
+        setModule(module) {
+            this.#module = module;
+        }
+
+    }
+
+    let table_student = document.getElementById('table_student');
+    let arrStudent = []
+    let btnAddStudent = document.getElementById('addStudent');
+    let btnDeleteStudent = document.getElementById('btnDeleteStudent');
+    let btnEditStudent = document.getElementById('btnEditStudent');
+
+    let id;
+    let name
+    let class_
+    let email
+    let born
+    let module
+
+
+    function displayStudent() {
+        table_student.innerHTML = "    <tr>\n" +
+            "        <th>\n" +
+            "            Mã học viên\n" +
+            "        </th>\n" +
+            "        <th>Tên</th>\n" +
+            "        <th>Lớp</th>\n" +
+            "        <th>Email</th>\n" +
+            "        <th>Ngày sinh</th>\n" +
+            "        <th>Module</th>\n" +
+            "    </tr>";
+        for (let i = 0; i < arrStudent.length; i++) {
+            let tdElementID = document.createElement("td");
+            tdElementID.innerText = arrStudent[i].getID();
+            let tdElementName = document.createElement("td");
+            tdElementName.innerText = arrStudent[i].getName();
+            let tdElementClass = document.createElement("td");
+            tdElementClass.innerText = arrStudent[i].getClass_();
+            let tdElementEmail = document.createElement("td");
+            tdElementEmail.innerText = arrStudent[i].getEmail();
+            let tdElementBorn = document.createElement("td");
+            tdElementBorn.innerText = arrStudent[i].getBorn();
+            let tdElementModule = document.createElement("td");
+            tdElementModule.innerText = arrStudent[i].getModule();
+
+            let trElement = document.createElement("tr");
+
+            trElement.appendChild(tdElementID);
+            trElement.appendChild(tdElementName);
+            trElement.appendChild(tdElementClass);
+            trElement.appendChild(tdElementEmail);
+            trElement.appendChild(tdElementBorn);
+            trElement.appendChild(tdElementModule);
+
+            table_student.appendChild(trElement);
+
+        }
+    }
+
+    function addStudent() {
+        inputID();
+        input();
+
+        let student = new Student(id, name, class_, email, born, module);
+
+        arrStudent.push(student);
+        console.log(arrStudent);
+        displayStudent();
+    }
+
+    function deleteStudent() {
+        let idStudent = prompt("Nhập mã học viên muốn xóa");
+        let index = -1;
+
+        for (let i = 0; i < arrStudent.length; i++) {
+            if (arrStudent[i].getID() === idStudent) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("mã học viên không toonf tại")
+        } else {
+            if (confirm("Bạn có chắc muốn xóa?")) {
+                arrStudent.splice(index, 1);
+            }
+        }
+
+
+        displayStudent()
+
+    }
+
+    function editStudent() {
+        let idStudent = prompt("Nhập mã học viên muốn sửa");
+        let index = -1;
+
+        for (let i = 0; i < arrStudent.length; i++) {
+            if (arrStudent[i].getID() === idStudent) {
+                index = i;
+                break;
+            }
+        }
+
+
+        if (index === -1) {
+            alert("mã học viên không toonf tại")
+        } else {
+
+            input();
+            arrStudent[index].setName(name);
+            arrStudent[index].setClass_(class_);
+            arrStudent[index].setEmail(email);
+            arrStudent[index].setBorn(born);
+            arrStudent[index].setModule(module);
+
+            alert("cập nhập thành công");
+            displayStudent();
+        }
+    }
+
+    function inputID() {
+        let regex = /^HV-\d{4}$/;
+        do {
+            id = prompt("nhập id của sinh viên");
+
+            if (!regex.test(id)) {
+                alert("không đúng định dạng nhập lại");
+            }
+        } while (!regex.test(id))
+    }
+
+    function input() {
+        do {
+            name = prompt("nhập tên sinh viên (<=50 ký tự)");
+            if (name.length > 50) {
+                console.log("Tên quá dài");
+            }
+        } while (name.length > 50);
+
+        class_ = prompt("nhập lớp");
+        email = prompt("nhập email");
+        let dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+        do {
+            born = prompt("nhập ngày sinh (dd/mm/yyyy)");
+            if (!dateRegex.test(born)) {
+                console.log("Sai định dạng ngày sinh");
+            }
+        } while (!dateRegex.test(born));
+        do {
+            module = prompt("nhập module (1-6)");
+            let moduleNum = +module;
+
+            if (!(moduleNum >= 1 && moduleNum <= 6)) {
+                console.log("Module không hợp lệ");
+            } else break;
+
+        } while (true);
+
+
+    }
+
+
+    btnEditStudent.addEventListener('click', () => editStudent());
+    btnAddStudent.addEventListener('click', () => addStudent());
+    btnDeleteStudent.addEventListener('click', () => deleteStudent());
+</script>
+</body>
+</html>
