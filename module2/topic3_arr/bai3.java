@@ -19,7 +19,17 @@ public class bai3 {
         }
         int sumcolumns = 0;
         System.out.println("Nhap cot cu the ");
-        int detailColumn = Integer.parseInt(sc.nextLine());
+        int detailColumn;
+        do {
+            detailColumn = Integer.parseInt(sc.nextLine());
+            if (detailColumn >= arr[0].length){
+                System.out.println("vui lòng nhập số cột nhỏ hơn cột của ma trận");
+            }
+        }while (detailColumn >= arr[0].length);
+
+
+
+
         for (int i = 0; i < arr.length; i++) {
             sumcolumns += arr[i][detailColumn];
         }

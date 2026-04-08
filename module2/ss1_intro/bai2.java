@@ -6,11 +6,8 @@ public class bai2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         float rate = 23000;
-
-        String tta = sc.nextLine();
-        float usd = Float.parseFloat(tta);
+        float usd = Float.parseFloat( sc.nextLine());
 
         System.out.println(usd *rate);
     }
