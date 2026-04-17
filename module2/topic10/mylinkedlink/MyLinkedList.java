@@ -20,13 +20,14 @@ public class MyLinkedList<E> {
     }
 
     public boolean remove(int index) {
-        Node temp = head;
+        if(index < 0 || index >= numNodes) return false;
 
+        Node temp = head;
         for (int i = 0; i < index - 1; i++) {
             temp = temp.next;
         }
-        temp = temp.next.next;
-
+        temp.next = temp.next.next;
+        numNodes--;
         return true;
     }
 
