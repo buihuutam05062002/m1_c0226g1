@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class ProductView {
 
-    private ProductController controller = new ProductController();
+    private ProductController productController = new ProductController();
     private Scanner sc = new Scanner(System.in);
 
     public void run() {
@@ -18,33 +18,33 @@ public class ProductView {
             int choice = menu();
             switch (choice) {
                 case 1:
-                    controller.add(inputProduct());
+                    productController.add(inputProduct());
                     break;
 
                 case 2:
-                    controller.update(inputProduct());
+                    productController.update(inputProduct());
                     break;
 
                 case 3:
                     System.out.print("ID delete: ");
-                    controller.delete(Integer.parseInt(sc.nextLine()));
+                    productController.delete(Integer.parseInt(sc.nextLine()));
                     break;
 
                 case 4:
-                    display(controller.getAll());
+                    display(productController.getAll());
                     break;
 
                 case 5:
                     System.out.print("Keyword: ");
-                    display(controller.search(sc.nextLine()));
+                    display(productController.search(sc.nextLine()));
                     break;
 
                 case 6:
 
-                    display(controller.sortByValue());
+                    display(productController.sortByValue());
                     break;
                 case 7:
-                    display(controller.sortByName());
+                    display(productController.sortByName());
                     break;
 
 
