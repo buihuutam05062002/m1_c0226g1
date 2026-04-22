@@ -1,6 +1,8 @@
 package topic11;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class Bai2 {
@@ -22,7 +24,10 @@ public class Bai2 {
                 temp.put(strs[i], temp.get(strs[i]) + 1);
             }
         }
-        for(String key : temp.keySet()){
+
+        Set<String> keys = temp.keySet();
+
+        for(String key : keys){
             System.out.println(key + " " + temp.get(key));
         }
 
