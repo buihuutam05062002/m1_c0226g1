@@ -33,8 +33,7 @@ public class ProductsService implements IProductManager {
     public boolean update(Product o) {
         Product old = productRepository.findById(o.getId());
         if(old != null){
-            old.setName(o.getName());
-            old.setValue(o.getValue());
+            productRepository.update(o);
             return true;
         }
         return false;

@@ -13,6 +13,7 @@ public class ProductRepository {
 
     static {
         products.add(new Product(1, "iPhone 15", 1200));
+        products.add(new Product(25, "Samsung S24", 1100));
         products.add(new Product(2, "Samsung S24", 1100));
         products.add(new Product(3, "Xiaomi 14", 700));
         products.add(new Product(4, "Oppo Find X5", 650));
@@ -22,9 +23,9 @@ public class ProductRepository {
         products.add(new Product(8, "HP Spectre x360", 1150));
         products.add(new Product(9, "Asus ROG Strix", 1500));
         products.add(new Product(10, "Lenovo ThinkPad X1", 1400));
-        products.add(new Product(11, "iPad Pro", 900));
+        products.add(new Product(11, "Asus ROG Strix", 900));
         products.add(new Product(12, "Samsung Tab S9", 850));
-        products.add(new Product(13, "Apple Watch Series 9", 450));
+        products.add(new Product(13, "Asus ROG Strix", 450));
         products.add(new Product(14, "Galaxy Watch 6", 400));
         products.add(new Product(15, "AirPods Pro", 250));
         products.add(new Product(16, "Sony WH-1000XM5", 350));
@@ -87,10 +88,26 @@ public class ProductRepository {
         result.sort(new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-               return o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase());
+                int flag = o1.getName().compareToIgnoreCase(o2.getName());
+                if(flag != 0){
+                    return flag;
+                }
+                return Integer.compare(o1.getId(), o2.getId());
             }
         });
         return result;
+    }
+
+
+    public boolean update(Product p) {
+        for (Product item : products) {
+            if (item.getId() == p.getId()) {
+                item.setName(p.getName());
+                item.setValue(p.getValue());
+                return true;
+            }
+        }
+        return false;
     }
 }
 

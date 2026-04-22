@@ -46,6 +46,12 @@ public class ProductView {
                 case 7:
                     display(productController.sortByName());
                     break;
+                case 8:
+                    System.out.print("");
+                    System.out.print("Vui lòng nhập id: ");
+                    Product p = productController.getById(Integer.parseInt(sc.nextLine()));
+                    System.out.println(p);
+                    break;
 
 
                 case 0:
@@ -55,7 +61,7 @@ public class ProductView {
     }
 
     private int menu() {
-        System.out.println("\n1.Add 2.Update 3.Delete 4.Show 5.Search 6.Sort by value 7. sort by name  0.Exit");
+        System.out.println("\n1.Add 2.Update 3.Delete 4.Show 5.Search 6.Sort by value 7. sort by name 8. find by id   0.Exit");
         System.out.print("Choose: ");
         return Integer.parseInt(sc.nextLine());
     }
