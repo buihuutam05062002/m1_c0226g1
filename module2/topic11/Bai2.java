@@ -22,8 +22,8 @@ public class Bai2 {
                 temp.put(strs[i], temp.get(strs[i]) + 1);
             }
         }
-        for(Map.Entry<String,Integer> entry : temp.entrySet()){
-            System.out.println(entry.getKey() + " " + entry.getValue());
+        for(String key : temp.keySet()){
+            System.out.println(key + " " + temp.get(key));
         }
 
 
