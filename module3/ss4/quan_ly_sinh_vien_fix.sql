@@ -5,7 +5,7 @@ use quan_ly_sinh_vien;
 create table classes(
 	class_id int primary key auto_increment,
     class_name varchar(60) not null,
-    star_date datetime not null,
+    start_date datetime not null,
     status bit
 );
 
@@ -61,33 +61,20 @@ values (1, 1, 8, 1),
 (1, 2, 10, 2),
 (2, 1, 12, 1);
 
--- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
-select *
-from students
-where student_name like 'h%';
+-- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
+select * from subjects 
+where credit = (select max(credit) from subjects);
 
--- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
-select *
-from classes
-where month(star_date) = 12;
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
+select * from subjects s
+join marks m 
+on s.sub_id = m.sub_id
+where m.mark = (select max(mark) from marks);
 
--- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
-select *
-from subjects
-where credit between 3 and 5;
-
--- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
-update students
-set class_id = 2
-where student_id = 1;
-
--- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
-select s.student_name,
-		sub.subname,
-        m.mark
-from marks m
-inner join students s
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
+select s.student_id, s.student_name, ifnull(avg(mark), 0) as avg_mark
+from students s 
+left join marks m
 on s.student_id = m.student_id
-inner join subjects sub
-on m.sub_id = sub.sub_id
-order by m.mark desc, s.student_name asc;
+group by s.student_id, s.student_name
+order by avg_mark desc;
